@@ -26,6 +26,7 @@ public class SimpleIME extends InputMethodService implements KeyboardView.OnKeyb
     @Override
     public void onPress(int primaryCode) {
         p++;
+        Log.d("MusicKeypad", "p value:" +p);
     }
 
     @Override
@@ -87,9 +88,9 @@ public class SimpleIME extends InputMethodService implements KeyboardView.OnKeyb
     }
 
     private void playClick(int keyCode){
-        switch(keyCode%6){
+        switch(keyCode%4){
             case 1:
-                final MediaPlayer sound1 = MediaPlayer.create(this, R.raw.sol);
+                final MediaPlayer sound1 = MediaPlayer.create(this, R.raw.knife_sound1);
                 sound1.start();
                 sound1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
@@ -99,7 +100,7 @@ public class SimpleIME extends InputMethodService implements KeyboardView.OnKeyb
                 });
                 break;
             case 2:
-                final MediaPlayer sound2 = MediaPlayer.create(this, R.raw.sol);
+                final MediaPlayer sound2 = MediaPlayer.create(this, R.raw.knife_sound2);
                 sound2.start();
                 sound2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
@@ -109,7 +110,7 @@ public class SimpleIME extends InputMethodService implements KeyboardView.OnKeyb
                 });
                 break;
             case 3:
-                final MediaPlayer sound3 = MediaPlayer.create(this, R.raw.la);
+                final MediaPlayer sound3 = MediaPlayer.create(this, R.raw.knife_sound3);
                 sound3.start();
                 sound3.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
@@ -118,33 +119,13 @@ public class SimpleIME extends InputMethodService implements KeyboardView.OnKeyb
                     }
                 });
                 break;
-            case 4:
-                final MediaPlayer sound4 = MediaPlayer.create(this, R.raw.sol);
+            case 0:
+                final MediaPlayer sound4 = MediaPlayer.create(this, R.raw.knife_sound4);
                 sound4.start();
                 sound4.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
                         sound4.release();
-                    }
-                });
-                break;
-            case 5:
-                final MediaPlayer sound5 = MediaPlayer.create(this, R.raw.do_octave);
-                sound5.start();
-                sound5.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mediaPlayer) {
-                        sound5.release();
-                    }
-                });
-                break;
-            case 6:
-                final MediaPlayer sound6 = MediaPlayer.create(this, R.raw.si);
-                sound6.start();
-                sound6.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mediaPlayer) {
-                        sound6.release();
                     }
                 });
                 break;
