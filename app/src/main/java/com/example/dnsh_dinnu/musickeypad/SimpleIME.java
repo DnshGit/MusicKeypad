@@ -88,9 +88,9 @@ public class SimpleIME extends InputMethodService implements KeyboardView.OnKeyb
     }
 
     private void playClick(int keyCode){
-        switch(keyCode%4){
+        switch(keyCode%7){
             case 1:
-                final MediaPlayer sound1 = MediaPlayer.create(this, R.raw.knife_sound1);
+                final MediaPlayer sound1 = MediaPlayer.create(this, R.raw.do_octave);
                 sound1.start();
                 sound1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
@@ -100,7 +100,7 @@ public class SimpleIME extends InputMethodService implements KeyboardView.OnKeyb
                 });
                 break;
             case 2:
-                final MediaPlayer sound2 = MediaPlayer.create(this, R.raw.knife_sound2);
+                final MediaPlayer sound2 = MediaPlayer.create(this, R.raw.do_octave);
                 sound2.start();
                 sound2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
@@ -110,7 +110,7 @@ public class SimpleIME extends InputMethodService implements KeyboardView.OnKeyb
                 });
                 break;
             case 3:
-                final MediaPlayer sound3 = MediaPlayer.create(this, R.raw.knife_sound3);
+                final MediaPlayer sound3 = MediaPlayer.create(this, R.raw.si);
                 sound3.start();
                 sound3.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
@@ -119,8 +119,8 @@ public class SimpleIME extends InputMethodService implements KeyboardView.OnKeyb
                     }
                 });
                 break;
-            case 0:
-                final MediaPlayer sound4 = MediaPlayer.create(this, R.raw.knife_sound4);
+            case 4:
+                final MediaPlayer sound4 = MediaPlayer.create(this, R.raw.do_octave);
                 sound4.start();
                 sound4.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
@@ -129,8 +129,38 @@ public class SimpleIME extends InputMethodService implements KeyboardView.OnKeyb
                     }
                 });
                 break;
+            case 5:
+                final MediaPlayer sound5 = MediaPlayer.create(this, R.raw.si);
+                sound5.start();
+                sound5.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        sound5.release();
+                    }
+                });
+                break;
+            case 6:
+                final MediaPlayer sound6 = MediaPlayer.create(this, R.raw.do_octave);
+                sound6.start();
+                sound6.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        sound6.release();
+                    }
+                });
+                break;
+            case 0:
+                final MediaPlayer sound7 = MediaPlayer.create(this, R.raw.si);
+                sound7.start();
+                sound7.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        sound7.release();
+                    }
+                });
+                break;
             default:
-                final MediaPlayer sound0 = MediaPlayer.create(this, R.raw.re);
+                final MediaPlayer sound0 = MediaPlayer.create(this, R.raw.do_octave);
                 sound0.start();
                 sound0.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
